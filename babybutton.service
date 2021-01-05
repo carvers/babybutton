@@ -1,0 +1,11 @@
+[Unit]
+Description=Send messages on button press
+After=network.target
+
+[Service]
+Environment="VAULT_TOKEN=INSERT_TOKEN_HERE"
+ExecStart=/usr/local/bin/inputexec --action-commands=/usr/local/etc/inputexec-actions.ini --source-file=/dev/input/by-id/usb-SIGMACHIP_USB_Keyboard-event-kbd --action-mode=run_sync --logging-target=syslog --logging-level=info
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
