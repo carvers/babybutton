@@ -197,28 +197,28 @@ need to have a unique label.
 * clone inputexec (git clone https://github.com/rbarrois/inputexec)
 * fix out of date python:
   ```patch
-diff --git a/inputexec/cli.py b/inputexec/cli.py
-index 34d9df8..8ac8ad0 100644
---- a/inputexec/cli.py
-+++ b/inputexec/cli.py
-@@ -119,7 +119,7 @@ class Setup(object):
-         else:
-             return line_readers.LineReader(src,
-                 pattern=args.format_pattern,
--                end_line=args.format_endline.decode('string_escape'),
-+                end_line=args.format_endline.encode('utf8').decode('unicode_escape'),
-             )
-
-     def make_executor(self, args):
-@@ -137,7 +137,7 @@ class Setup(object):
-             return executors.BlockingExcutor(command_map=commands)
-         else:
-             return executors.PrintingExecutor('-',
--                end_line=args.format_endline.decode('string_escape'),
-+                end_line=args.format_endline.encode('utf8').decode('unicode_escape'),
-             )
-
-     def make_runner(self, args):
+  diff --git a/inputexec/cli.py b/inputexec/cli.py
+  index 34d9df8..8ac8ad0 100644
+  --- a/inputexec/cli.py
+  +++ b/inputexec/cli.py
+  @@ -119,7 +119,7 @@ class Setup(object):
+           else:
+               return line_readers.LineReader(src,
+                   pattern=args.format_pattern,
+  -                end_line=args.format_endline.decode('string_escape'),
+  +                end_line=args.format_endline.encode('utf8').decode('unicode_escape'),
+               )
+  
+       def make_executor(self, args):
+  @@ -137,7 +137,7 @@ class Setup(object):
+               return executors.BlockingExcutor(command_map=commands)
+           else:
+               return executors.PrintingExecutor('-',
+  -                end_line=args.format_endline.decode('string_escape'),
+  +                end_line=args.format_endline.encode('utf8').decode('unicode_escape'),
+               )
+  
+       def make_runner(self, args):
   ```
 * install inputexec (python3 setup.py install)
 * run inputexec (inputexec --action-mode=print --source-file=/dev/input/by-id/YOURDEVICE)
