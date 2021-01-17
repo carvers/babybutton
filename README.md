@@ -160,14 +160,18 @@ the very least, a button to push, and a computer to run the software that
 handles the button being pushed.
 
 You can use whatever you want, but for our build, we used [this random button
-we found on Amazon](https://smile.amazon.com/gp/product/B0814C1Q43/) and a
-[Raspberry Pi 4 model
-B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). We also used
-a [Raspberry Pi PoE Hat](https://www.raspberrypi.org/products/poe-hat/) to
-power the Raspberry Pi over Ethernet, which conveniently let us plug in a
-single cable and be done with it. Given we had Ethernet in the garage where we
-wanted to wire this up, this worked out quite nicely, but is not strictly
-speaking necessary.
+we found on Amazon](https://smile.amazon.com/gp/product/B0814C1Q43/). It had no
+way to mount it to the wall easily, so we just put a screw right through the
+plastic. We used a [Raspberry Pi 4 model
+B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) as the
+computer. We also used a [Raspberry Pi PoE
+Hat](https://www.raspberrypi.org/products/poe-hat/) to power the Raspberry Pi
+over Ethernet, which conveniently let us plug in a single cable and be done
+with it. Given we had Ethernet in the garage where we wanted to wire this up,
+this worked out quite nicely, but is not strictly speaking necessary. We put
+the Raspberry Pi in a [SecurePi
+case](https://chicagodist.com/products/securepi-case) which mounted neatly to
+the wall.
 
 ## Setting Up The Button
 
