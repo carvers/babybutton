@@ -16,7 +16,6 @@ builds:
       - arm64
     goos:
       - darwin
-      - freebsd
       - linux
       - windows
     mod_timestamp: '{{ .CommitTimestamp }}'
@@ -28,7 +27,10 @@ checksum:
 env:
   - CGO_ENABLED=0
 release:
-  disable: true
+  github:
+    owner: carvers
+    name: babybutton
+  prerelease: auto
 signs:
   - artifacts: checksum
     args:
