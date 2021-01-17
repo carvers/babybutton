@@ -1,6 +1,9 @@
 archives:
   - files:
-      - none*
+      - actions.ini
+      - babybutton.service
+      - README.md
+      - LICENSE
     format: zip
     name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 before:
